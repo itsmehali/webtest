@@ -1,0 +1,283 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-family: "Lato", sans-sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.pimg1, .pimg2, .pimg3 {
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /*
+      Paralax effect.
+      fixed = parallax
+      scroll = normal
+    */
+    background-attachment: fixed;
+
+}
+
+.pimg1 {
+    background-image: url('../img/alpok2.jpg');
+    min-height: 100%;
+}
+
+.pimg2 {
+    background-image: url('../img/fog.jpg');
+    min-height: 400px;
+}
+
+.pimg3 {
+    background-image: url('../img/alpok.jpg');
+    min-height: 400px;
+}
+
+.section {
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.section-light {
+    background-color: #f4f4f4;
+    color: #666;
+}
+
+.section-dark {
+    background-color: #282e34;
+    color: #ddd;
+}
+
+.ptext {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.ptext .border {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+}
+
+.ptext .border.trans {
+    background-color: transparent;
+}
+
+@media (max-width: 568px) {
+    .pimg1, .pimg2, .pimg3 {
+        background-attachment: scroll;
+    }
+}
+
+body.signup main {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* js */
+.nav-main {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #FFF;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 100;
+}
+
+.nav-main > ul {
+    flex-grow: 1;
+}
+
+.nav-main > *:last-child {
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-toggle-nav {
+    width: 60px;
+    height: 100%;
+    background-color: #F98F39;
+    background-image: url("../img/menu.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+}
+
+.nav-sidebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: calc(100vh - 60px);
+    padding: 0 5px;
+    background-color: #1b1b1b;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    min-width: 50px;
+}
+
+.nav-sidebar.revealed {
+    width: min-content;
+}
+
+.nav-sidebar ul {
+    padding-top: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.nav-sidebar.revealed ul {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-sidebar ul li {
+    line-height: 60px;
+    list-style: none;
+}
+
+.nav-sidebar ul li span, .nav-sidebar ul li a {
+    display: block;
+    height: 60px;
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.nav-sidebar ul li a:hover {
+    background-color: #222;
+}
+
+.btn-toggle-nav:hover {
+    opacity: 0.5;
+}
+
+.nav-main ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15px;
+}
+
+.nav-main ul li {
+    list-style: none;
+    line-height: 60px;
+}
+
+.nav-main ul li a {
+    display: block;
+    height: 100%;
+    padding: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #111;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+.main-wrapper {
+    margin: 0 auto;
+    width: 100px;
+}
+
+header nav {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+}
+
+header nav li {
+    float: left;
+    list-style: none;
+}
+
+header nav ul li a {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #111;
+    line-height: 63px;
+}
+
+a {
+    text-decoration: none;
+}
+
+header .nav-login {
+    float: right;
+}
+
+header .nav-login form {
+    float: left;
+    padding-top: 15px;
+}
+
+header .nav-login form input {
+    float: left;
+    width: 140px;
+    height: 30px;
+    padding: 0 10px;
+    margin-right: 10px;
+    border: none;
+    background-color: #CCC;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #111;
+    line-height: 30px;
+}
+
+header .nav-login form button {
+    float: left;
+    width: 60px;
+    height: 30px;
+    margin-right: 10px;
+    border: none;
+    background-color: #f3f3f3;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #111;
+    cursor: pointer;
+}
+
+header .nav-login form button:hover {
+    background-color: #CCC;
+}
+
+header .nav-login a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #111;
+    line-height: 63px;
+    cursor: pointer;
+    float: left;
+}
